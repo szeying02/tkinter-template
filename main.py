@@ -49,7 +49,7 @@ class window(tk.Tk):
         frame_name = frame_class.__name__
         frame = frame_class(parent = self.container, controller = self)
         self.frames[frame_name] = frame
-        frame.grid(row=0, column=0, sticky="nsew")
+        frame.grid(row = 0, column = 0, sticky = "nsew")
 
     def display_frame(self, frame_name):
         """show a frame for the given frame name"""
@@ -75,13 +75,13 @@ class start_frame(tk.Frame):
         canvas.create_image(500, 0, image = controller.bg, anchor = "n")
         
         # creating the text on the canvas
-        canvas.create_text(250, 40, text = "tkinter template", font=controller.title_font, fill="white")
+        canvas.create_text(250, 40, text = "tkinter template", font = controller.title_font, fill = "white")
 
         # creating the buttons
-        page_1_button = tkm.Button(self, text="Page 1", bg = "#2F4F4F", fg="white", highlightthickness=3, command=lambda: controller.add_display_frame(page_1_frame))
-        page_1_button.config(highlightbackground = "#FFFFFF", highlightcolor= "#FFFFFF")
-        page_2_button = tkm.Button(self, text="Page 2", bg = "#2F4F4F", fg="white", highlightthickness=3, command=lambda: controller.add_display_frame(page_2_frame))
-        page_2_button.config(highlightbackground = "#FFFFFF", highlightcolor= "#FFFFFF")
+        page_1_button = tkm.Button(self, text = "Page 1", bg = "#2F4F4F", fg = "white", highlightthickness=3, command=lambda: controller.add_display_frame(page_1_frame))
+        page_1_button.config(highlightbackground = "#FFFFFF", highlightcolor = "#FFFFFF")
+        page_2_button = tkm.Button(self, text ="Page 2", bg = "#2F4F4F", fg = "white", highlightthickness=3, command=lambda: controller.add_display_frame(page_2_frame))
+        page_2_button.config(highlightbackground = "#FFFFFF", highlightcolor = "#FFFFFF")
 
         # placing the buttons onto the canvas
         page_1_button_canvas = canvas.create_window(250, 120, anchor = "center", window = page_1_button)
@@ -92,6 +92,6 @@ root = window()
 root.title("tkinter template")
 
 # fixing the size of the gui window
-root.minsize(width=500, height=500)
-root.maxsize(width=500, height=500)
+root.minsize(width = 500, height = 500)
+root.maxsize(width = 500, height = 500)
 root.mainloop()
